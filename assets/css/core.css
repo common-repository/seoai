@@ -1,0 +1,363 @@
+.spin-action {
+    position: relative;
+    max-width: 100px;
+}
+
+button.btn-spin {
+    border: 1px solid #6c9494;
+    background: #add;
+    padding: 5px 10px 7px;
+    color: #374c45;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+button.btn-spin:hover {
+    padding-left: 15px;
+}
+
+.icon-status {
+    width: 18px;
+    height: 18px;
+    background: url(icon/close.png) no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 6px;
+    right: 20px;
+}
+
+.icon-status.icon-spined {
+    background: url(icon/checked.png) no-repeat;
+    background-size: contain;
+}
+
+.icon-status.icon-spining {
+    background: url(icon/loading-arrow.png) no-repeat;
+    background-size: contain;
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/* toggle */
+
+.boolean-list:not(old-ie),
+.btn-group-yesno:not(old-ie) {
+    display: block;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 1px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    max-width: 140px;
+    margin-bottom: 1em;
+}
+
+.boolean-list:not(old-ie) input,
+.btn-group-yesno:not(old-ie) input {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.boolean-list:not(old-ie) label,
+.btn-group-yesno:not(old-ie) label {
+    margin: 0;
+    float: left;
+    display: block;
+    width: 50%;
+    border-radius: 4px;
+    padding: 10px 0;
+    text-align: center;
+    color: #333;
+    font-weight: normal;
+    transition: all 0.2s ease-in-out;
+    overflow: visible;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.boolean-list:not(old-ie) label:before,
+.btn-group-yesno:not(old-ie) label:before {
+    transition: all 0.2s ease-in-out;
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 1px;
+    right: 0%;
+    bottom: 1px;
+    left: 50%;
+    border-radius: 3px;
+    z-index: -1;
+    opacity: 0;
+}
+
+.boolean-list:not(old-ie) label:after,
+.btn-group-yesno:not(old-ie) label:after {
+    content: " ";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border: 1px solid #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    border-radius: 5px;
+    display: block;
+    z-index: -1;
+    opacity: 0;
+}
+
+.boolean-list:not(old-ie) label:hover,
+.btn-group-yesno:not(old-ie) label:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.boolean-list:not(old-ie) input:checked+label,
+.btn-group-yesno:not(old-ie) input:checked+label {
+    color: white;
+}
+
+.boolean-list:not(old-ie) input:checked+label:hover,
+.btn-group-yesno:not(old-ie) input:checked+label:hover {
+    background: transparent;
+    cursor: default;
+}
+
+.boolean-list:not(old-ie) input:checked+label:before,
+.btn-group-yesno:not(old-ie) input:checked+label:before {
+    opacity: 1;
+}
+
+.boolean-list:not(old-ie) input:focus+label:after,
+.boolean-list:not(old-ie) input:active+label:after,
+.btn-group-yesno:not(old-ie) input:focus+label:after,
+.btn-group-yesno:not(old-ie) input:active+label:after {
+    opacity: 1;
+}
+
+.boolean-list:not(old-ie) input[value="1"]+label:before,
+.btn-group-yesno:not(old-ie) input[value="1"]+label:before {
+    background: #088178;
+    right: 0%;
+    left: 50%;
+}
+
+.boolean-list:not(old-ie) input[value="0"]+label:before,
+.btn-group-yesno:not(old-ie) input[value="0"]+label:before {
+    background: #c0392b;
+    right: 50%;
+    left: 0%;
+}
+
+.boolean-list:not(old-ie) input:checked[value="1"]+label:before,
+.btn-group-yesno:not(old-ie) input:checked[value="1"]+label:before {
+    left: 1px;
+    right: 50%;
+}
+
+.boolean-list:not(old-ie) input:checked[value="0"]+label:before,
+.btn-group-yesno:not(old-ie) input:checked[value="0"]+label:before {
+    right: 1px;
+    left: 50%;
+}
+
+
+/* panel */
+
+.content-main {
+    padding: 30px 30px 30px 9px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-main .row {
+    display: flex;
+}
+
+#seoai-main .col-6 {
+    width: 50%;
+    padding: 0 15px;
+}
+
+#seoai-main .mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+#seoai-main .content-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+#seoai-main .content-header .content-title {
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+#seoai-main .card {
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0.25rem;
+    width: 100%;
+    max-width: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    overflow: hidden;
+}
+
+#seoai-main input#submit {
+    padding: 0.5rem 0.95rem;
+    font-weight: 500;
+    background-color: #088178;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+#seoai-main .card-header {
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(222, 226, 230, 0.7);
+    font-size: 20px;
+    padding: 0;
+}
+
+#seoai-main .card-header h4 {
+    margin: 7px 0 10px;
+}
+
+#seoai-main .card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.3rem 0;
+}
+
+#seoai-main .row-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#seoai-main label {
+    font-size: 17px;
+}
+
+#seoai-main .row-input>label {
+    padding-right: 10px;
+}
+
+input.input-seoai {
+    background-color: #f4f5f9;
+    border: 2px solid #f4f5f9;
+    font-size: 13px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-left: 20px;
+    color: #4f5d77;
+    min-width: 220px;
+    border-radius: 4px;
+    height: 45px;
+}
+
+input.input-seoai:focus {
+    border: none;
+}
+
+.input-group {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+button.btn.btn-light.bg {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #088178;
+    border: 1px solid transparent;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+
+@media only screen and (max-width: 700px) {
+    .content-main .row {
+        flex-direction: column;
+    }
+    #seoai-main .col-6 {
+        width: 93%;
+    }
+    .content-main {
+        padding: 0;
+    }
+}
